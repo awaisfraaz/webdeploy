@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | Facebook</title>
+    <link rel="stylesheet" href="../css/notification.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Fallback for icons if google fonts fail */
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook Logo"
+                class="fb-logo">
+            <div class="search-bar">
+                <i class="material-icons">search</i>
+                <input type="text" placeholder="Search Facebook">
+            </div>
+        </div>
+
+        <div class="nav-center">
+            <div class="nav-tab" title="Home">
+                <i class="material-icons">home</i>
+            </div>
+            <div class="nav-tab" title="Watch">
+                <i class="material-icons">ondemand_video</i>
+            </div>
+            <div class="nav-tab" title="Marketplace">
+                <i class="material-icons">storefront</i>
+            </div>
+            <div class="nav-tab" title="Groups">
+                <i class="material-icons">groups</i>
+            </div>
+            <div class="nav-tab" title="Gaming">
+                <i class="material-icons">sports_esports</i>
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <div class="nav-icon-btn" title="Menu">
+                <i class="material-icons">apps</i>
+            </div>
+            <div class="nav-icon-btn" title="Messenger">
+                <i class="material-icons">chat</i>
+            </div>
+            <div class="nav-icon-btn active" title="Notifications">
+                <i class="material-icons">notifications</i>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+                alt="Profile" class="nav-profile-img">
+        </div>
+    </nav>
+
+    <!-- Main Layout -->
+    <div class="main-container">
+
+        <!-- Left Sidebar -->
+        <div class="sidebar left-sidebar">
+            <div class="sidebar-heading">Notifications</div>
+            <div class="sidebar-item active">
+                <div class="sidebar-icon-container">
+                    <i class="material-icons sidebar-icon"
+                        style="color: white; background-color: #1877f2; border-radius: 50%; padding: 8px; font-size: 20px;">notifications</i>
+                </div>
+                <span>All Notifications</span>
+            </div>
+            <div class="sidebar-item">
+                <div class="sidebar-icon-container">
+                    <i class="material-icons sidebar-icon"
+                        style="color: black; background-color: #e4e6eb; border-radius: 50%; padding: 8px; font-size: 20px;">mark_chat_unread</i>
+                </div>
+                <span>Unread</span>
+            </div>
+        </div>
+
+        <!-- Center Feed (Notifications List) -->
+        <div class="feed">
+            <div class="notifications-header">
+                <h2>Notifications</h2>
+                <div class="header-actions">
+                    <span class="mark-read-btn">Mark all as read</span>
+                    <div class="settings-btn">
+                        <i class="material-icons">more_horiz</i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notifications-section-title">New</div>
+
+            <div class="notification-item unread">
+                <div class="notif-avatar-container">
+                    <img src="https://via.placeholder.com/56" class="notif-avatar">
+                    <div class="notif-icon-badge comment">
+                        <i class="material-icons">chat_bubble</i>
+                    </div>
+                </div>
+                <div class="notif-content">
+                    <p><strong>Friend One</strong> commented on your post: "This is amazing! Great work on the replica."
+                    </p>
+                    <span class="notif-time">2 hours ago</span>
+                </div>
+                <div class="notif-status"></div>
+            </div>
+
+            <div class="notification-item unread">
+                <div class="notif-avatar-container">
+                    <img src="https://via.placeholder.com/56" class="notif-avatar">
+                    <div class="notif-icon-badge like">
+                        <i class="material-icons">thumb_up</i>
+                    </div>
+                </div>
+                <div class="notif-content">
+                    <p><strong>Tech Crunch</strong> and <strong>15 others</strong> liked your photo.</p>
+                    <span class="notif-time">4 hours ago</span>
+                </div>
+                <div class="notif-status"></div>
+            </div>
+
+            <div class="notifications-section-title">Earlier</div>
+
+            <div class="notification-item">
+                <div class="notif-avatar-container">
+                    <img src="https://via.placeholder.com/56" class="notif-avatar">
+                    <div class="notif-icon-badge group">
+                        <i class="material-icons">groups</i>
+                    </div>
+                </div>
+                <div class="notif-content">
+                    <p><strong>Developers Group</strong>: New post by <strong>John Doe</strong>: "Has anyone tried the
+                        new API?"</p>
+                    <span class="notif-time">Yesterday at 10:30 AM</span>
+                </div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notif-avatar-container">
+                    <img src="https://via.placeholder.com/56" class="notif-avatar">
+                    <div class="notif-icon-badge friend">
+                        <i class="material-icons">person_add</i>
+                    </div>
+                </div>
+                <div class="notif-content">
+                    <p><strong>Jane Smith</strong> sent you a friend request.</p>
+                    <div class="friend-request-actions">
+                        <button class="confirm-btn">Confirm</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                    <span class="notif-time">Yesterday at 2:15 PM</span>
+                </div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notif-avatar-container">
+                    <img src="https://via.placeholder.com/56" class="notif-avatar">
+                    <div class="notif-icon-badge memory">
+                        <i class="material-icons">history</i>
+                    </div>
+                </div>
+                <div class="notif-content">
+                    <p>You have memories with <strong>Friend Two</strong> and <strong>3 others</strong> to look back on
+                        today.</p>
+                    <span class="notif-time">2 days ago</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Sidebar (Same as Home) 
+        <div class="sidebar right-sidebar">
+            <div class="sidebar-heading">Sponsored</div>
+            <div class="sponsored-item">
+                <img src="https://via.placeholder.com/120x120" class="sponsored-img">
+                <div class="sponsored-info">
+                    <span class="sponsored-title">Amazing Product</span>
+                    <span class="sponsored-url">example.com</span>
+                </div>
+            </div>
+            <div class="sponsored-item">
+                <img src="https://via.placeholder.com/120x120" class="sponsored-img">
+                <div class="sponsored-info">
+                    <span class="sponsored-title">Best Service Ever</span>
+                    <span class="sponsored-url">service.com</span>
+                </div>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="sidebar-heading">
+                <span>Contacts</span>
+                <div class="contact-icons">
+                    <i class="material-icons">video_call</i>
+                    <i class="material-icons">search</i>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-avatar-container">
+                    <img src="https://via.placeholder.com/36" class="contact-avatar">
+                    <div class="online-status"></div>
+                </div>
+                <span>Friend One</span>
+            </div>
+            <div class="contact-item">
+                <div class="contact-avatar-container">
+                    <img src="https://via.placeholder.com/36" class="contact-avatar">
+                    <div class="online-status"></div>
+                </div>
+                <span>Friend Two</span>
+            </div>-->
+        </div>
+
+    </div>
+
+    <script src="../js/notification.js"></script>
+</body>
+
+</html>

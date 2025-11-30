@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends - Facebook</title>
+    <link rel="stylesheet" href="../css/friends.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook Logo" class="fb-logo">
+        <div class="nav-right">
+            <button class="nav-btn" onclick="window.location.href='/home'">
+                <i class="material-icons">home</i> Home
+            </button>
+            <button class="nav-btn" onclick="window.location.href='/profile'">
+                <i class="material-icons">person</i> Profile
+            </button>
+        </div>
+    </nav>
+
+    <div class="friends-container">
+        <div class="friends-sidebar">
+            <h2>Friends</h2>
+            <div class="sidebar-menu">
+                <div class="menu-item active" onclick="showSection('all')">
+                    <i class="material-icons">people</i>
+                    <span>All Friends</span>
+                    <span class="count" id="friendCount">0</span>
+                </div>
+                <div class="menu-item" onclick="showSection('requests')">
+                    <i class="material-icons">person_add</i>
+                    <span>Friend Requests</span>
+                    <span class="count" id="requestCount">0</span>
+                </div>
+                <div class="menu-item" onclick="showSection('suggestions')">
+                    <i class="material-icons">group_add</i>
+                    <span>Suggestions</span>
+                </div>
+                <div class="menu-item" onclick="showSection('sent')">
+                    <i class="material-icons">send</i>
+                    <span>Sent Requests</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="friends-content">
+            <!-- All Friends Section -->
+            <div id="allFriendsSection" class="content-section">
+                <h3>All Friends</h3>
+                <div id="friendsList" class="friends-grid"></div>
+            </div>
+
+            <!-- Friend Requests Section -->
+            <div id="requestsSection" class="content-section" style="display: none;">
+                <h3>Friend Requests</h3>
+                <div id="requestsList" class="friends-grid"></div>
+            </div>
+
+            <!-- Suggestions Section -->
+            <div id="suggestionsSection" class="content-section" style="display: none;">
+                <h3>People You May Know</h3>
+                <div id="suggestionsList" class="friends-grid"></div>
+            </div>
+
+            <!-- Sent Requests Section -->
+            <div id="sentSection" class="content-section" style="display: none;">
+                <h3>Sent Requests</h3>
+                <div id="sentList" class="friends-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/friends.js"></script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Post</title>
+    <link rel="stylesheet" href="../css/comment.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Fallback for icons if google fonts fail */
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook Logo"
+                class="fb-logo">
+            <div class="search-bar">
+                <i class="material-icons">search</i>
+                <input type="text" placeholder="Search Facebook">
+            </div>
+        </div>
+
+        <div class="nav-center">
+            <div class="nav-tab" title="Home">
+                <i class="material-icons">home</i>
+            </div>
+            <div class="nav-tab" title="Watch">
+                <i class="material-icons">ondemand_video</i>
+            </div>
+            <div class="nav-tab" title="Marketplace">
+                <i class="material-icons">storefront</i>
+            </div>
+            <div class="nav-tab" title="Groups">
+                <i class="material-icons">groups</i>
+            </div>
+            <div class="nav-tab" title="Gaming">
+                <i class="material-icons">sports_esports</i>
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <div class="nav-icon-btn" title="Menu">
+                <i class="material-icons">apps</i>
+            </div>
+            <div class="nav-icon-btn" title="Messenger">
+                <i class="material-icons">chat</i>
+            </div>
+            <div class="nav-icon-btn" title="Notifications">
+                <i class="material-icons">notifications</i>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+                alt="Profile" class="nav-profile-img">
+        </div>
+    </nav>
+
+    <!-- Main Layout -->
+    <div class="main-container">
+
+        <!-- Left Sidebar -->
+        <div class="sidebar left-sidebar">
+            <div class="sidebar-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+                    alt="User" class="sidebar-avatar">
+                <span>User Name</span>
+            </div>
+            <div class="sidebar-item">
+                <i class="material-icons sidebar-icon" style="color: #1877f2;">people</i>
+                <span>Friends</span>
+            </div>
+            <div class="sidebar-item">
+                <i class="material-icons sidebar-icon" style="color: #1877f2;">groups</i>
+                <span>Groups</span>
+            </div>
+            <div class="sidebar-item">
+                <i class="material-icons sidebar-icon" style="color: #1877f2;">storefront</i>
+                <span>Marketplace</span>
+            </div>
+            <div class="sidebar-item">
+                <i class="material-icons sidebar-icon" style="color: #1877f2;">ondemand_video</i>
+                <span>Watch</span>
+            </div>
+            <div class="sidebar-item">
+                <i class="material-icons sidebar-icon" style="color: #1877f2;">history</i>
+                <span>Memories</span>
+            </div>
+            <div class="sidebar-more">
+                <div class="more-btn">
+                    <i class="material-icons">expand_more</i>
+                </div>
+                <span>See more</span>
+            </div>
+        </div>
+
+        <!-- Center Content (The Post) -->
+        <div class="feed">
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-header-left">
+                        <img src="https://via.placeholder.com/40" class="post-avatar">
+                        <div class="post-info">
+                            <span class="post-author">Tech Crunch</span>
+                            <div class="post-time">
+                                <span>2h</span>
+                                <span class="dot">·</span>
+                                <i class="material-icons" style="font-size: 12px;">public</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-options">
+                        <i class="material-icons">more_horiz</i>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Exciting news! We just launched our new AI-powered coding assistant. Check it out!</p>
+                </div>
+                <div class="post-media">
+                    <img src="https://via.placeholder.com/600x300/1877f2/ffffff?text=New+Feature+Launch"
+                        alt="Post Image">
+                </div>
+                <div class="post-stats">
+                    <div class="stats-left">
+                        <i class="material-icons like-icon-sm">thumb_up</i>
+                        <span>2.5K</span>
+                    </div>
+                    <div class="stats-right">
+                        <span>450 Comments</span>
+                        <span>120 Shares</span>
+                    </div>
+                </div>
+                <div class="post-actions-bar">
+                    <div class="post-action-btn" id="like-btn">
+                        <i class="material-icons">thumb_up_off_alt</i>
+                        <span>Like</span>
+                    </div>
+                    <div class="post-action-btn">
+                        <i class="material-icons">chat_bubble_outline</i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="post-action-btn">
+                        <i class="material-icons">share</i>
+                        <span>Share</span>
+                    </div>
+                </div>
+
+                <!-- Comment Section -->
+                <div class="comment-section">
+                    <div class="comment-filter">
+                        <span>Most relevant</span>
+                        <i class="material-icons">arrow_drop_down</i>
+                    </div>
+
+                    <div class="write-comment">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+                            class="comment-avatar">
+                        <div class="comment-input-container">
+                            <input type="text" placeholder="Write a comment..." id="comment-input">
+                            <div class="comment-icons">
+                                <i class="material-icons">sentiment_satisfied_alt</i>
+                                <i class="material-icons">camera_alt</i>
+                                <i class="material-icons">gif</i>
+                                <i class="material-icons">sticky_note_2</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment-list" id="comment-list">
+                        <!-- Existing Comment -->
+                        <div class="comment">
+                            <img src="https://via.placeholder.com/32" class="comment-avatar-sm">
+                            <div class="comment-content-wrapper">
+                                <div class="comment-bubble">
+                                    <a href="#" class="comment-author">John Doe</a>
+                                    <p class="comment-text">This looks amazing! Can't wait to try it.</p>
+                                </div>
+                                <div class="comment-actions">
+                                    <span>Like</span>
+                                    <span>Reply</span>
+                                    <span>1h</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Existing Comment -->
+                        <div class="comment">
+                            <img src="https://via.placeholder.com/32" class="comment-avatar-sm">
+                            <div class="comment-content-wrapper">
+                                <div class="comment-bubble">
+                                    <a href="#" class="comment-author">Jane Smith</a>
+                                    <p class="comment-text">Great work team! 🚀</p>
+                                </div>
+                                <div class="comment-actions">
+                                    <span>Like</span>
+                                    <span>Reply</span>
+                                    <span>30m</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="sidebar right-sidebar">
+            <div class="sidebar-heading">Sponsored</div>
+            <div class="sponsored-item">
+                <img src="https://via.placeholder.com/120x120" class="sponsored-img">
+                <div class="sponsored-info">
+                    <span class="sponsored-title">Amazing Product</span>
+                    <span class="sponsored-url">example.com</span>
+                </div>
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-heading">
+                <span>Contacts</span>
+                <div class="contact-icons">
+                    <i class="material-icons">video_call</i>
+                    <i class="material-icons">search</i>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-avatar-container">
+                    <img src="https://via.placeholder.com/36" class="contact-avatar">
+                    <div class="online-status"></div>
+                </div>
+                <span>Friend One</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/comment.js"></script>
+</body>
+
+</html>

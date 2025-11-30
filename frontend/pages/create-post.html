@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post - Facebook</title>
+    <link rel="stylesheet" href="../css/create-post.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook Logo" class="fb-logo">
+        <button class="nav-btn" onclick="window.location.href='/home'">
+            <i class="material-icons">close</i> Cancel
+        </button>
+    </nav>
+
+    <!-- Create Post Container -->
+    <div class="create-post-container">
+        <h2>Create Post</h2>
+        
+        <div class="user-info">
+            <img id="userAvatar" src="" alt="User" class="user-avatar">
+            <span id="userName" class="user-name">Loading...</span>
+        </div>
+
+        <textarea id="postTextarea" class="post-textarea" placeholder="What's on your mind?"></textarea>
+
+        <div id="imagePreviewContainer" class="image-preview-container">
+            <img id="imagePreview" src="" alt="Preview" class="image-preview">
+            <button class="remove-image-btn" onclick="removeImage()">
+                <i class="material-icons">close</i>
+            </button>
+        </div>
+
+        <div class="add-to-post">
+            <span>Add to your post</span>
+            <div class="media-options">
+                <button class="media-btn" onclick="selectImage()" title="Photo/Video">
+                    <i class="material-icons" style="color: #45bd62;">photo_library</i>
+                    <input type="file" id="imageInput" accept="image/*" onchange="handleImageSelect(event)">
+                </button>
+            </div>
+        </div>
+
+        <button id="postBtn" class="post-btn" onclick="createPost()" disabled>Post</button>
+    </div>
+
+    <script src="../js/create-post.js"></script>
+</body>
+</html>

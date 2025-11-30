@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Live Producer</title>
+    <link rel="stylesheet" href="../css/live.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/800px-2021_Facebook_icon.svg.png"
+                alt="Facebook Logo" class="logo">
+            <div class="search-box">
+                <i class="material-icons">search</i>
+                <input type="text" placeholder="Search Facebook">
+            </div>
+        </div>
+        <div class="nav-middle">
+            <div class="nav-icon active">
+                <i class="material-icons">home</i>
+            </div>
+            <div class="nav-icon">
+                <i class="material-icons">ondemand_video</i>
+            </div>
+            <div class="nav-icon">
+                <i class="material-icons">storefront</i>
+            </div>
+            <div class="nav-icon">
+                <i class="material-icons">groups</i>
+            </div>
+            <div class="nav-icon">
+                <i class="material-icons">videogame_asset</i>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="nav-icon-circle">
+                <i class="material-icons">apps</i>
+            </div>
+            <div class="nav-icon-circle">
+                <i class="material-icons">message</i>
+            </div>
+            <div class="nav-icon-circle">
+                <i class="material-icons">notifications</i>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+                alt="Profile" class="user-pic">
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="sidebar-left">
+            <div class="sidebar-header">
+                <h2>Live Producer</h2>
+            </div>
+            <div class="sidebar-menu">
+                <div class="menu-item active">
+                    <i class="fas fa-video"></i>
+                    <span>Go Live</span>
+                </div>
+                
+                <div class="menu-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Insights</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-tools"></i>
+                    <span>Resources</span>
+                </div>
+            </div>
+
+            <div class="setup-section">
+                <h3>Post details</h3>
+                <div class="post-to-dropdown">
+                    <span>Post to your timeline</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="input-group">
+                    <label>Title (Optional)</label>
+                    <input type="text" placeholder="Add a title">
+                </div>
+                <div class="input-group">
+                    <label>Description</label>
+                    <textarea placeholder="Say something about this live video..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content (Preview & Settings) -->
+        <div class="main-content">
+            <div class="header-actions">
+                <h1>Go Live</h1>
+                <div class="action-buttons">
+                    <button class="btn-secondary">Discard</button>
+                    <button class="btn-primary" id="goLiveBtn">Go Live</button>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <!-- Video Preview -->
+                <div class="video-preview-card">
+                    <div class="preview-header">
+                        <span>Preview</span>
+                    </div>
+                    <div class="preview-box" id="previewBox">
+                        <div class="placeholder-content">
+                            <i class="fas fa-video-slash"></i>
+                            <p>Connect streaming software to go live</p>
+                        </div>
+                        <video id="cameraFeed" autoplay muted playsinline style="display: none;"></video>
+                    </div>
+                    <div class="preview-controls">
+                        <button class="control-btn"><i class="fas fa-microphone"></i></button>
+                        <button class="control-btn"><i class="fas fa-video"></i></button>
+                    </div>
+                </div>
+
+                <!-- Stream Setup -->
+                <div class="setup-options-card">
+                    <div class="tabs">
+                        <div class="tab active" onclick="switchTab('stream-key')">Stream Key</div>
+                        <div class="tab" onclick="switchTab('camera')">Webcam</div>
+                    </div>
+
+                    <!-- Stream Key Section -->
+                    <div id="stream-key-section" class="setup-section-content">
+                        <div class="info-box">
+                            <p>Use a stream key to stream from software like OBS, Wirecast, or XSplit.</p>
+                        </div>
+                        <div class="key-field">
+                            <label>Server URL</label>
+                            <div class="copy-input">
+                                <input type="text" value="rtmps://live-api-s.facebook.com:443/rtmp/" readonly>
+                                <button
+                                    onclick="copyToClipboard('rtmps://live-api-s.facebook.com:443/rtmp/')">Copy</button>
+                            </div>
+                        </div>
+                        <div class="key-field">
+                            <label>Stream Key</label>
+                            <div class="copy-input">
+                                <input type="password" value="FB-102030405060-0000000000" id="streamKey" readonly>
+                                <button onclick="copyToClipboard('FB-102030405060-0000000000')">Copy</button>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="persistentKey">
+                                <label for="persistentKey">Use a persistent stream key</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Webcam Section -->
+                    <div id="camera-section" class="setup-section-content" style="display: none;">
+                        <div class="info-box">
+                            <p>Go live directly from your browser using your webcam.</p>
+                        </div>
+                        <div class="key-field">
+                            <label>Camera</label>
+                            <select id="cameraSelect">
+                                <option>Default Camera</option>
+                            </select>
+                        </div>
+                        <div class="key-field">
+                            <label>Microphone</label>
+                            <select id="micSelect">
+                                <option>Default Microphone</option>
+                            </select>
+                        </div>
+                        <button class="btn-primary" id="startCameraBtn" style="width: 100%; margin-top: 10px;">Start
+                            Camera</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/live.js"></script>
+</body>
+
+</html>

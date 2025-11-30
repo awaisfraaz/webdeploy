@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up for Facebook</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="header">
+            <img src="../src/Facebook-Logo.png" alt="facebook" class="fb-logo">
+
+        </div>
+        <div class="form-wrapper">
+            <div class="form-header">
+                <h1>Create a new account</h1>
+                <p>It's quick and easy.</p>
+            </div>
+            <div class="divider"></div>
+            <form id="reg-form">
+                <div class="input-group-row">
+                    <input type="text" placeholder="First name" name="firstname" required>
+                    <input type="text" placeholder="Surname" name="lastname" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Mobile number or email address" name="reg_email__" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="New password" name="reg_passwd__" required>
+                </div>
+
+                <div class="input-group-label">
+                    <label>Date of birth</label>
+                    <a href="#" title="Click for more information" class="info-icon">?</a>
+                </div>
+                <div class="dob-selects">
+                    <select name="birthday_day" id="day" title="Day"></select>
+                    <select name="birthday_month" id="month" title="Month"></select>
+                    <select name="birthday_year" id="year" title="Year"></select>
+                </div>
+
+                <div class="input-group-label">
+                    <label>Gender</label>
+                    <a href="#" title="Click for more information" class="info-icon">?</a>
+                </div>
+                <div class="gender-radios">
+                    <label class="gender-option">
+                        Female <input type="radio" name="sex" value="1">
+                    </label>
+                    <label class="gender-option">
+                        Male <input type="radio" name="sex" value="2">
+                    </label>
+                    <label class="gender-option">
+                        Custom <input type="radio" name="sex" value="-1" id="gender-custom">
+                    </label>
+                </div>
+
+                <div id="custom-gender-container" class="hidden">
+                    <select name="preferred_pronoun" aria-label="Select your pronoun">
+                        <option value="" disabled selected>Select your pronoun</option>
+                        <option value="1">She: "Wish her a happy birthday!"</option>
+                        <option value="2">He: "Wish him a happy birthday!"</option>
+                        <option value="6">They: "Wish them a happy birthday!"</option>
+                    </select>
+                    <div class="input-group">
+                        <input type="text" placeholder="Gender (optional)" name="custom_gender">
+                    </div>
+                </div>
+
+                <div class="terms-text">
+                    <p>People who use our service may have uploaded your contact information to Facebook. <a
+                            href="#">Learn more</a>.</p>
+                    <p>By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a> and
+                        <a href="#">Cookies Policy</a>. You may receive SMS notifications from us and can opt out at any
+                        time.</p>
+                </div>
+
+                <div class="submit-btn-container">
+                    <button type="submit" name="websubmit">Sign Up</button>
+                </div>
+
+                <div class="login-link">
+                    <a href="/">Already have an account?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../js/register.js"></script>
+</body>
+
+</html>
